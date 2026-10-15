@@ -13,9 +13,10 @@
   implementation target; `tools/verify.py` converts its input diagrams and
   checks C++ implementations. The six `examples/` projects demonstrate that
   verifier and are not the browser mock-up.
-- `project/diagrams/output/` contains the diagrams generated for the mock-up.
-  The class, state, and sequence designs in `project/diagrams/input/` remain
-  authoritative where they cover the same elements.
+- `project/diagrams/output/` contains editable `.drawio` diagrams for the
+  mock-up. The class, state, and sequence designs in
+  `project/diagrams/input/` remain authoritative where they cover the same
+  elements.
 
 ## Commands
 

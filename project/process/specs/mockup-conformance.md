@@ -10,7 +10,7 @@ and activity diagrams describe the supported mock-up flows.
 ## Class diagram
 
 Source: `project/diagrams/input/lab_utlaan_klassediagram(3).drawio`.
-Generated representation: [`class-design.mmd`](../../diagrams/output/class-design.mmd).
+Generated draw.io diagram: [`class-design.drawio`](../../diagrams/output/class-design.drawio).
 
 | Source element | Representation |
 |---|---|
@@ -35,7 +35,7 @@ This is a UI-scope limitation, not a change to the class diagram.
 ## State machine
 
 Source: `project/diagrams/input/TilstandDiagram.drawio`.
-Generated representation: [`state-lab-utstyr-design.mmd`](../../diagrams/output/state-lab-utstyr-design.mmd).
+Generated draw.io diagram: [`state-lab-utstyr-design.drawio`](../../diagrams/output/state-lab-utstyr-design.drawio).
 
 | Source element | Implementation |
 |---|---|
@@ -51,7 +51,7 @@ contain one exemplar because `laan_ut` has no count parameter.
 ## Sequence diagram
 
 Source: `project/diagrams/input/Sekvens.drawio`.
-Generated representation: [`sequence-laan-ut-design.mmd`](../../diagrams/output/sequence-laan-ut-design.mmd).
+Generated draw.io diagram: [`sequence-laan-ut-design.drawio`](../../diagrams/output/sequence-laan-ut-design.drawio).
 
 | Source message | Mock-up behavior |
 |---|---|
@@ -85,9 +85,9 @@ only as scenario labels. They are not introduced as class-diagram classes.
 
 ## Additional diagrams
 
-- [`use-case-design.puml`](../../diagrams/output/use-case-design.puml) shows the
+- [`use-case-design.drawio`](../../diagrams/output/use-case-design.drawio) shows the
   `Lab Ansatt` use cases implemented by the page.
-- [`activity-design.puml`](../../diagrams/output/activity-design.puml) shows the
+- [`activity-design.drawio`](../../diagrams/output/activity-design.drawio) shows the
   borrow/return paths and the unavailable-equipment branch.
 - These use-case and activity diagrams are derived from the mock-up
   requirements and code; they were not present among the original UML inputs.
