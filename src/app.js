@@ -99,10 +99,10 @@ function registrer_retur(utlaan) {
     throw new Error("Utlaan finnes ikke lenger i den aktive listen.");
   }
 
+  fjern_laan(utlaan.laanetaker, utlaan);
   for (let unit = 0; unit < utlaan.antall; unit += 1) {
     oek_antall_tilgjengelig(utlaan.utlaant_utstyr);
   }
-  fjern_laan(utlaan.laanetaker, utlaan);
   lab.utlaansliste.splice(loanIndex, 1);
 }
 
