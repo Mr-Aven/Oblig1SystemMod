@@ -3,11 +3,11 @@ classDiagram
         -Lab_Utstyr[0..*] utstyrsliste
         -Student[0..*] student_liste
         -Utlaan[0..*] utlaansliste
-        +legg_til_utstyr(utstyr: Lab_Utstyr) void
-        +registrer_student(student: Student) void
-        +laan_ut(student: Student, utstyr: Lab_Utstyr) Utlaan
-        +registrer_retur(utlaan: Utlaan) void
-        +finn_tilgjengelig_utstyr(utstyr: Lab_Utstyr) Bool
+        +legg_til_utstyr(Lab_Utstyr utstyr) void
+        +registrer_student(Student student) void
+        +laan_ut(Student student, Lab_Utstyr utstyr) Utlaan
+        +registrer_retur(Utlaan utlaan) void
+        +finn_tilgjengelig_utstyr(Lab_Utstyr utstyr) Bool
     }
 
     class Lab_Utstyr {

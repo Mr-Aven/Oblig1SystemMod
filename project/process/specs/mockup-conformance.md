@@ -74,6 +74,12 @@ cannot be established reliably from the source, so this return is intentionally
 not simulated or assigned to a participant. This remains an open source
 question; no recipient has been assumed.
 
+The source additionally draws a `Bool` return from `Lab` to `Lab Ansatt`, while
+the class diagram declares `Lab.laan_ut(...)` to return `Utlaan`. The sequence
+diagram preserves the drawn `Bool` return as source notation; the browser UI
+instead displays a confirmation message and does not treat that return label as
+a changed class signature.
+
 The lifeline names `UtlaansObjekter`, `Objekt`, and `Studenter` are preserved
 only as scenario labels. They are not introduced as class-diagram classes.
 
@@ -108,6 +114,21 @@ only as scenario labels. They are not introduced as class-diagram classes.
   it, an attempt after all copies were borrowed showed the unavailable message
   without creating another loan, and refresh restored the initial data.
 - Responsive viewport check at 390 px — document width remained 390 px.
+- `tools/verify.py` was run against isolated copies of the three source
+  diagrams, renamed to the verifier's supported `class.drawio`,
+  `state-<class>.drawio`, and `sequence-<scenario>.drawio` patterns. It
+  successfully parsed all four classes, five sequence lifelines/calls, and two
+  states. Its parser warned that one class connector and one state connector
+  were unattached; it does not read the standalone `get_navn()` label or the
+  separate state-event labels. It also represents the actor as `Actor` because
+  the visible `Lab Ansatt` label is a separate draw.io text shape. A
+  parser-to-output comparison therefore reports those encoding differences:
+  role-labeled relation keys and `get_navn()` on the class diagram, the detached
+  start/event annotations on the state diagram, and the actor label on the
+  sequence diagram. These were cross-checked against the original draw.io
+  content and specification, not treated as extra or missing model elements.
+  `verify.py` neither validates custom `.puml` syntax nor recognizes the
+  use-case/activity diagram types.
 - The C++ UML verifier is not a test of this static browser mock-up. The
   GitHub Pages workflow has not been run against GitHub, and no push or deploy
   has been made.
