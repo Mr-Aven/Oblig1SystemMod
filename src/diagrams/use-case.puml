@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+actor "Lab Ansatt" as Ansatt
+rectangle "Laboratorieutlån mock-up" {
+  usecase "Vis utstyrsoversikt\n(Lab_Utstyr)" as VisUtstyr
+  usecase "Vis Student- og Utlaan-oversikt" as VisStudenter
+  usecase "Laan(Objekt, Student)" as Laan
+  usecase "registrer_retur(utlaan)" as Retur
+}
+
+Ansatt --> VisUtstyr
+Ansatt --> VisStudenter
+Ansatt --> Laan
+Ansatt --> Retur
+
+note bottom of Retur
+  Retur gjelder utlån opprettet i gjeldende nettleserøkt.
+  Oppdatering av siden gjenoppretter eksempeldataene.
+end note
+@enduml

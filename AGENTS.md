@@ -8,6 +8,17 @@ scenarios. A person drew the design; a verifier then compares your implementatio
 element by element, and reports every difference. Success is **100 % alignment** on every
 report: the code is exactly the design, nothing more and nothing less.
 
+## Source fidelity for every implementation
+
+Whenever an implementation is based on source material in this repository (including diagrams,
+specifications, or an approved ADR), that material is authoritative. Preserve its names, meaning,
+relationships, behavior, and constraints; do not silently infer extra model elements or rules.
+Before declaring work complete, compare the implementation against its source material and report
+every missing, changed, extra, ambiguous, or otherwise divergent element. Do not claim complete
+alignment while any deviation remains unexplained. Record assumptions explicitly, and obtain
+approval for decisions that change source meaning or scope. This rule applies to all repository
+implementations and supplements, rather than replaces, the task-specific instructions below.
+
 ## Where things are
 
 | Path | What it is | You may |

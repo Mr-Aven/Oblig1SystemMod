@@ -1,0 +1,20 @@
+sequenceDiagram
+    actor "Lab Ansatt" as Ansatt
+    participant Lab
+    participant UtlaansObjekter
+    participant Objekt
+    participant Studenter
+
+    Ansatt->>Lab: Laan(Objekt, Student)
+    Lab->>UtlaansObjekter: finnObjekt(Objekt)
+    UtlaansObjekter-->>Lab: Objekt
+    Lab->>Objekt: erTilgjengelig()
+    Objekt-->>Lab: Bool
+    alt Objekt er tilgjengelig
+        Lab->>Studenter: finnStudent(Student)
+        Studenter-->>Lab: Student
+        Lab->>Objekt: settStudentPaaLaan()
+    else Objekt er ikke tilgjengelig
+        Note over Lab: UI viser en norsk melding; utlån opprettes ikke.
+    end
+    Note over Lab,Objekt: Kildediagrammets stiplede returmelding Laan har uklar mottaker og er utelatt.

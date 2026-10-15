@@ -1,0 +1,5 @@
+stateDiagram-v2
+    state "UTLÅNT" as UTLANT
+    [*] --> LEDIG
+    LEDIG --> UTLANT : regUtlaan()
+    UTLANT --> LEDIG : regRetur()
