@@ -37,6 +37,14 @@ function reduser_antall_tilgjengelig(utstyr) {
   utstyr.antall_tilgjengelig -= 1;
 }
 
+function regUtlaan(utstyr) {
+  reduser_antall_tilgjengelig(utstyr);
+}
+
+function regRetur(utstyr) {
+  oek_antall_tilgjengelig(utstyr);
+}
+
 function finn_tilgjengelig_utstyr(utstyr) {
   return er_tilgjengelig(utstyr);
 }
@@ -66,7 +74,7 @@ function settStudentPaaLaan(utstyr, student) {
     antall: 1,
   };
 
-  reduser_antall_tilgjengelig(utstyr);
+  regUtlaan(utstyr);
   lab.utlaansliste.push(utlaan);
   legg_til_laan(student, utlaan);
   return utlaan;
@@ -101,7 +109,7 @@ function registrer_retur(utlaan) {
 
   fjern_laan(utlaan.laanetaker, utlaan);
   for (let unit = 0; unit < utlaan.antall; unit += 1) {
-    oek_antall_tilgjengelig(utlaan.utlaant_utstyr);
+    regRetur(utlaan.utlaant_utstyr);
   }
   lab.utlaansliste.splice(loanIndex, 1);
 }
