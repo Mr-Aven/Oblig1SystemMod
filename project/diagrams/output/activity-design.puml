@@ -1,0 +1,30 @@
+@startuml
+start
+:Vis Lab_Utstyr, Student og aktive Utlaan;
+
+if (Handling?) then (laan_ut)
+  :Velg Student og Lab_Utstyr;
+  :finnObjekt(Objekt);
+  :erTilgjengelig();
+  if (Tilgjengelig?) then (ja)
+    :finnStudent(Student);
+    :settStudentPaaLaan();
+    :Opprett Utlaan med antall = 1;
+    :regUtlaan() reduserer antall_tilgjengelig;
+    :Legg Utlaan i Lab.utlaansliste og Student.mine_laan;
+    :Vis LEDIG → UTLÅNT;
+  else (nei)
+    :Vis melding om utilgjengelig utstyr;
+  endif
+else (registrer_retur)
+  :Velg et aktivt Utlaan fra denne økten;
+  :registrer_retur(utlaan);
+  :Fjern Utlaan fra Student.mine_laan;
+  :regRetur() øker antall_tilgjengelig;
+  :Fjern Utlaan fra Lab.utlaansliste;
+  :Vis UTLÅNT → LEDIG;
+endif
+
+:Oppdater oversiktene;
+stop
+@enduml
